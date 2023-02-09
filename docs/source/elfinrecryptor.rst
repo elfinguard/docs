@@ -216,13 +216,14 @@ The RPC endpiont's URL is like below:
 .. code-block::
 
    /decryptChunk?token=<base64-string>&index=<unique-integer>
-   /getDecryptedFile?token=<base64-string>&path=<file-path-on-ipfs>
+   /getDecryptedFile?token=<base64-string>&path=<file-path-on-ipfs>&size=<integer>
 
 The `decryptChunk` endpoint decrypts the byte string given in the POST body and returns the decrypted plaintext. The `getDecryptedFile` endpoint decrypts a file on decentralized storage, and it supports resuming breakpoints during downloading, using the `Content-Range` Header.
 
 A client-side file can be encrypted by `encryptChunk` and then decrypted by `decryptChunk`. The `index` parameter used by `decryptChunk` must be the same as the one used when calling `encryptChunk`. The `encryptChunk`/`decryptChunk` endpoints are sued in some use cases where files are shared through some traditional methods, such as email and ftp, instead of decentralized storages.
 
-The decryption task token is given as the `token` parameter. The `path` pamameter specifies a file on IPFS from the RPCX/gRPC server. 
+The decryption task token is given as the `token` parameter. The `path` pamameter specifies a file on IPFS from the RPCX/gRPC server. The `size` parameter specifies the size of the returned data. If the decrypted data is larger than it, then the tail is truncated and not returned.
+
 
 Load Balance and Authentication
 =====================
