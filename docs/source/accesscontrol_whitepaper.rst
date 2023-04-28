@@ -1,5 +1,5 @@
 ======================================
-ElfinGuard Access-Control Protocol Whitepaper
+ElfinGuard Access-Control Protocol
 ======================================
 
 Today users can store information with the help of Decentralized File Hosting. However, decentralizing the storage is not enough. In order to ensure full protection, users need an access-control protocol.

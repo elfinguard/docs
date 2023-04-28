@@ -1,5 +1,5 @@
 ===========================
-PaymentJudger
+BCH Payment Judger
 ===========================
 An online judger for BCH stochastic payments
 -------------------------------------------
