@@ -1,25 +1,22 @@
 Welcome to ElfinGuard's documentation!
 ===================================
 
-ElfinGuard is an access-control protocol for decentralized messaging and file hosting. It is designed for the authors, the audience and CDN/NaaS providers. The authors use smart contract to program who can and how to access the contents, and CDN/NaaS providers build neutral channels, through which mass multimedia content can be delivered smoothly from the authors to the target audience. 
+ElfinGuard protocols aim to decentralize the web. Its first released protocol, the Access-Control protocol, is designed for the authors and their target audience. The authors use smart contract to program who can and how to access the contents, and CDN providers build neutral channels, through which mass multimedia content can be delivered smoothly from the authors to the target audience. It links the authors and audience directly and frictionlessly, without any intervention or censorship.
 
-ElfinGuard links the authors and audience directly and frictionlessly, without any intervention or censorship.
-
-ElfinGuard help CDN/NaaS providers serve more customers and support brand-new use cases, which will bring them more earnings. Besides file access control, ElfinGuard can also enable NaaS providers to act as cross-chain oracles.
-
-No access control, no ownership. In the Web3.0 era, ElfinGuard is an important infrastructure to bring data ownership back to the creators and users.
+No access control, no ownership. In the Web3.0 era, ElfinGuard's Access-Control Protocol is an important infrastructure to bring data ownership back to the creators and users.
 
 .. note::
 
-   The ElfinGuard protocol is still under active development. The documention here is not stale now.
+   The ElfinGuard protocols are still under active development. The documention here is not stale now.
 
 Contents
 --------
 
 .. toctree::
 
-   filehost_whitepaper
+   accesscontrol_whitepaper
    elfinauthorizer
    elfinrecryptor
    elfindirectory
-   elfindex
+   utxoadapter
+   paymentjudger

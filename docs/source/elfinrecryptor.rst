@@ -94,7 +94,7 @@ It returns json-encoded byte string list. Each entry of the list is an encrypted
 Encrypt file chunks
 ---------------------------
 
-A GET or POST request should be sent to follow URLs:
+A POST request should be sent to follow URLs:
 
 .. code-block::
 
@@ -215,8 +215,8 @@ The RPC endpiont's URL is like below:
 
 .. code-block::
 
-   /decryptChunk?token=<base64-string>&index=<unique-integer>
-   /getDecryptedFile?token=<base64-string>&path=<file-path-on-ipfs>&size=<integer>
+   /decryptChunk?token=<base58-string>&index=<unique-integer>
+   /getDecryptedFile?token=<base58-string>&path=<file-path-on-ipfs>&size=<integer>
 
 The `decryptChunk` endpoint decrypts the byte string given in the POST body and returns the decrypted plaintext. The `getDecryptedFile` endpoint decrypts a file on decentralized storage, and it supports resuming breakpoints during downloading, using the `Content-Range` Header.
 
@@ -316,8 +316,10 @@ Proxy to Elfin Authorizers
 
 You can request the coordinator to assign a proxy to you, which can forward your request to an Elfin authorizer.
 
+Note that it needs to input chain name
+
 .. code-block::
 
-    /eh_getProxy?session=<session-id>
+    /eh_getProxy?session=<session-id>&chain_name=<chain-name>
 
 Usually, end users pay CDN providers for higher download speed. However, end users do not directly pay authorizers. Instead, CDN providers will pay the authorizers. To better serve its customers, a CDN provider can build a proxy to forward customers' requests (`/tx`, `/log` and `/calldata`) to Elfin authorizers.

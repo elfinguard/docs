@@ -20,11 +20,11 @@ Sometimes we want to share several files as a whole through. For example:
 
 As a convention, in the IPFS immutable directory:
 
-1. the entry file must be named as "index", such as index.m3u8, index.html, index.md
+1. The entry file must be named as "index", such as index.m3u8, index.html, index.md
 
-2. there can be a "readme.txt" file to briefly introduce the files in this directory
+2. There can be a "readme.md" file to briefly introduce the files in this directory. It can have only text contents or include [base64-encoded images](https://github.com/home-assistant/frontend/issues/5576).
 
-3. there must be a "config.json" file to guide viewers in decrypting some of the files in this directory. It is allowed that some of the files are not encrypted.
+3. There must be a "config.json" file to guide viewers in decrypting some of the files in this directory. It is allowed that some of the files are not encrypted.
 
 Metadata's schema
 -------------------
@@ -44,6 +44,28 @@ The `schema <http://json-schema.org/learn/getting-started-step-by-step>`_ of the
               "type": "integer"
               "minimum": 0,
               "exclusiveMinimum": false
+          },
+          "introduction": {
+              "type": "string"
+              "description": "briefly introduce the contents in this directory",
+          },
+          "keywords": {
+              "type": "string"
+              "description": "some keywords which help search engines indexing this elfin directory, seperated by commas",
+          },
+          "author": {
+              "name": {
+                  "type": "string"
+                  "description": "The author's name",
+              },
+              "homepage": {
+                  "type": "string"
+                  "description": "The home page of the author (https or ipns)",
+              },
+              "evm_address": {
+                  "type": "string"
+                  "description": "The author's EVM address",
+              }
           },
           "files": {
               "type": "array",
