@@ -22,7 +22,7 @@ As a convention, in the IPFS immutable directory:
 
 1. The entry file must be named as "index", such as index.m3u8, index.html, index.md
 
-2. There can be a "readme.md" file to briefly introduce the files in this directory. It can have only text contents or include `base64-encoded images<https://github.com/home-assistant/frontend/issues/5576>`_.
+2. There can be a "readme.md" file to briefly introduce the files in this directory. It can have only text contents or include `base64-encoded images <https://github.com/home-assistant/frontend/issues/5576>`_.
 
 3. There must be a "config.json" file to guide viewers in decrypting some of the files in this directory. It is allowed that some of the files are not encrypted.
 
