@@ -1,6 +1,9 @@
 ===========================
-Elfin Recryptor: the new service of CDN providers
+Elfin Recryptor
 ===========================
+A new function in content delivery
+-------------------------------------------
+
 
 CDN providers run recryptors to serve the authors and audience.
 

@@ -1,9 +1,7 @@
 ==============================================================
-Elfin Authorizer: the new service of NaaS providers
+Elfin Authorizer
 ==============================================================
-
--------------------------------------------
-Blockchain-based Sophisticated Access Control
+Blockchain-based Authorizing
 -------------------------------------------
 
 In the Web 2.0 era, account-based access control is very common. You must register to a website or App. Then it grants you a "level", such as Guest, VIP, SVIP, etc. With different levels, you have different service quality. For example, some high-quality contents are only available to VIP, and SVIP account can view a new TV show much earlier than a guest account. 

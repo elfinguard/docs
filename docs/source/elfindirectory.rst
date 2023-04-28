@@ -1,6 +1,8 @@
 ===========================
-Elfin Directory: Arrange Permissioned Contents on Decentralized Storages
+Elfin Directory
 ===========================
+Arrange Permissioned Contents on Decentralized Storages
+-------------------------------------------
 
 .. note::
 
