@@ -12,7 +12,7 @@ The payer and PaymentJudger follow these steps:
 
 3. The enclave generate a VRF output based on the transaction's hashid and decide whether to broadcast this tx based on the specified possibility. The VRF output and the proof are also sent to the payer, no matter whether the tx is broadcasted or not.
 
-The payer-signed Bitcoin Cash transaction must be a "derivable" transaction from which the `UTXO adaptor<https://github.com/elfinguard/utxoadapter>`_ can derive an EVM transaction containing one EVM log. Further more, the first OP\_RETURN output's must have at least seven pushed data elements and the seventh must be a two-byte integer indicating the probability of the payment.
+The payer-signed Bitcoin Cash transaction must be a "derivable" transaction from which the `UTXO adaptor <https://github.com/elfinguard/utxoadapter>`_ can derive an EVM transaction containing one EVM log. Further more, the first OP\_RETURN output's must have at least seven pushed data elements and the seventh must be a two-byte integer indicating the probability of the payment.
 
 PaymentJudger will serialize and sign the derived EVM log in the same way as the authorizer does: serialize the following solidity struct using `abi.encodePacked` and sign it using `personal_sign`.
 
