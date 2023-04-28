@@ -6,17 +6,16 @@ Today users can store information with the help of Decentralized File Hosting. H
 
 We aim to add this missing link by combining the power of decentralized storage with advanced access control. ElfinGuard is revolutionizing the way users protect their data. 
 
--------------------------------------------------------------------
-ElfinGuard's Access-Control Protocol for Decentralized File Hosting
--------------------------------------------------------------------
+The Value of Access-Control
+======================================
 
-Web 2.0 relies heavily on file hosting in tandem with content delivery networks (CDNs) to deliver multimedia contents to users.  Authors spend time and effort to create the content, and it costs them storage and bandwidth resources to deliver it to their target users.  Authors and Delivery services earn revenue from end users, either directly (fees) or indirectly (advertisement).  The Web 2.0 era has generated multiple centralized methods to directly control access to these contents; businesses can not profit if users can extract any content without permission. 
+Web 2.0 relies heavily on file hosting in tandem with content delivery networks (CDNs) to deliver multimedia contents to users.  Authors spend time and effort to create the content, and it costs them storage and bandwidth resources to deliver it to their target users. Authors and Delivery services earn revenue from end users, either directly (fees) or indirectly (advertisement). The Web 2.0 era has generated multiple centralized methods to directly control access to these contents; businesses can not profit if users can extract any content without permission. 
 
-Web 3.0 has seemingly solved the problem of centralized file storage; solutions such as IPFS, Filecoin, Swarm and Arweave offer decentralized file storage.  However, this technology only incentivizes storage providers . There is no earning opportunity for authors and deliverers by using decentralized file storage solutions as there are no access-control methods.
+Web 3.0 has seemingly solved the problem of centralized file storage; solutions such as IPFS, Filecoin, Swarm and Arweave offer decentralized file storage. However, this technology only incentivizes storage providers. There is no earning opportunity for authors and deliverers by using decentralized file storage solutions as there are no access-control methods.
 
-Blockchains build an internet of value, smart contracts enable programmable value, but can the traditional internet of information be built with blockchains as well?  Can smart contracts facilitate information accessing?  ElfinGuard answers both these questions.  
+Blockchains build an internet of value, smart contracts enable programmable value, but can the traditional internet of information be built with blockchains as well?  Can smart contracts facilitate information accessing? ElfinGuard answers both these questions.  
 
-ElfinGuard’s access-control protocol allows authors to program who, how and when the usesrs can access content on decentralized storages.  This technology will pave the way for new blockchain-oriented business models.   
+ElfinGuard’s access-control protocol allows authors to program who, how and when the usesrs can access content on decentralized storages. This technology will pave the way for new blockchain-oriented business models.   
 
 ElfinGuard's access-control protocol has the following innovative features:
 
@@ -28,7 +27,7 @@ This article introduces the protocol step-by-step.  Each step will refine the gr
 
 
 Enforced Permissions on Public Data
------------------------------------
+======================================
 
 While there isn't a common definition of Web 3.0, most people believe it will empower users to control their own data, enjoy greater privacy and prevent centralized platforms from monopolizing the acquisition, recommendation, and censorship of their information. Thus, the decentralization of data storage and data delivery are key cornerstones of Web 3.0.
 
@@ -48,7 +47,7 @@ When a user requests the original file, a CDN provider fetches the encrypted dat
 
 
 End-to-end encryption
------------------------------------
+======================================
 
 On Web 2.0 platforms users can update original files without any encryption.  As a result, these files can be vulnerable to being leaked to the public or malicious attackers, even if users request a platform to keep them private.  Most Platforms are required by law and company rule to have an active privacy disclosure, but the uploaded files must be stored in databases, which use human-controlled permissions to limit access.  Software vulnerabilities and human errors or unfaithfulness can still result in data leaks, despite a platform’s best efforts to enact privacy disclosure.
 
@@ -62,7 +61,7 @@ During the whole process of storing and delivering, only the inside logic of the
 
 
 Authorization contracts
------------------------------------
+======================================
 
 Traditionally, CDN providers require authorization servers to provide sophisticated dynamic access control.  Authorization servers are typically created by a CDN provider's customer.  For example, if Bob requests to view a URL of website A, the CDN provider will ask the website A’s authorization server whether Bob is authorized to view the URL.  The website A may allow Bob to view it if he is a VVIP, or make Bob wait until Friday if he is a VIP, or deny Bob if he is neither.  However, in the Web 3.0 era, authors need a more streamlined way for dynamic access control as running an authorization server is too complicated and time consuming for ordinary authors.
 
@@ -70,7 +69,8 @@ One solution to this problem is to use on-chain Smart Contracts for dynamic acce
 
 
 Multi-Grant from Authorities
------------------------------------
+======================================
+
 When a re-cryptor requires `eth_call` for authorization, there’s a potential for ‘Witch Attacks’ to occur.  To query `eth_call,’ users need a blockchain node to provide RPC endpoints.  A node can be run by a user, but in most cases the user will rent a node from a Node-as-a-Service (NaaS) provider.
 
 Although the re-cryptors' internal data and logic are safe under the protection of enclaves, the input data the re-cryptor receives through `eth_call` may be incorrect – this can be for various reasons.  A CDN provider may receive incorrect information from a NaaS provider due to incorrect configuration of the re-cryptor's DNS and TLS settings.  A node run by a CDN provider may also return incorrect information if it is hacked because of vulnerabilities.  Any CDN provider may have security problems; thus, trusting one single CDN provider is problematic for content authors.
@@ -83,8 +83,9 @@ All Authorizers run by the same authority have the same "grant root".  For each 
 
 (The encryption/decryption algorithm for "multi-grant" will be introduced in a separate article.)
 
-5. Multi-zone to mitigate risks of enclaves' vulnerabilities
------------------------------------
+Multi-zone to mitigate risks of enclaves' vulnerabilities
+======================================
+
 Enclaves are integral to a system's security, but it still may be compromised if the underlying hardware has vulnerabilities.  Despite there have been no real attacks reported on CPUs with hyperthreading disabled, the risk of security breaches still exists.
 
 Currently, enclaves can be implemented using Intel's SGX & TDX, AMD's SEV-SNP, ARM's TEE, and AWS's Nitro.  SGX is the most mature and mainstream solution while the others are rapidly evolving.  Enclaves are divided into different zones, and each zone uses the same technology.  For example, all enclaves based on Intel SGX are in the same zone.
@@ -94,7 +95,8 @@ The probability of all zones being simultaneously exploited by hackers is extrem
 For example, an author divides a file into three parts: Part #1 is protected by SGX enclaves, Part #2 by SEV-SNP enclaves, and Part #3 by AWS's Nitro enclaves.  This approach requires the audience to retrieve all three parts to recover the full original file.
 
 The Big Picture
--------------------
+======================================
+
 ElfinGuard Access-Control Protocol uses smart contracts to manage file accessibility with following functions:
 
 .. image:: elfinguard_architecture.png
