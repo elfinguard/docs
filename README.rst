@@ -1,9 +1,5 @@
-Template for the Read the Docs tutorial
+Documents for the ElfinGuard Protocols
 =======================================
 
-This GitHub template includes fictional Python library
-with some basic Sphinx docs.
+This repo containts the reStructuredText source codes of the documents for the ElfinGuard Protocols, which can be build with `Sphinx <https://www.sphinx-doc.org/en/master/>`_.
 
-Read the tutorial here:
-
-https://docs.readthedocs.io/en/stable/tutorial/
