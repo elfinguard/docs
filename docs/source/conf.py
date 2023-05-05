@@ -2,9 +2,9 @@
 
 # -- Project information
 
-project = 'ElfinHost'
-copyright = '2022, The ElfinHost Team'
-author = 'The ElfinHost Team'
+project = 'ElfinGuard'
+copyright = '2023, The ElfinGuard Team'
+author = 'The ElfinGuard Team'
 
 release = '0.1'
 version = '0.1.0'
