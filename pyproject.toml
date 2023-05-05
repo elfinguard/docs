@@ -4,7 +4,7 @@ build-backend = "flit_core.buildapi"
 
 [project]
 name = "elfinguard"
-authors = [{name = "Graziella", email = "kui.wang@smartbch.org"}]
+authors = [{name = "Kui Wang", email = "kui.wang@smartbch.org"}]
 dynamic = ["version", "description"]
 
 dependencies = [
