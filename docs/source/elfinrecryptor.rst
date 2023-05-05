@@ -21,7 +21,7 @@ A GET request should be sent to such a URL:
 
 .. code-block::
 
-  /getEncryptTaskToken?fileId=<hex-string>&sig=<hex-encoded-signature>
+  /eg_getEncryptTaskToken?fileId=<hex-string>&sig=<hex-encoded-signature>
 
 It returns a json string with three fields:
 
@@ -46,7 +46,7 @@ A POST request should be sent to such a URL:
 
 .. code-block::
 
-   /getEncryptedParts?token=<base58-string>
+   /eg_getEncryptedParts?token=<base58-string>
 
 The encryption task token is given as the `token` parameter. The body of the request is a json string with following schema:
 
@@ -101,8 +101,8 @@ A POST request should be sent to follow URLs:
 
 .. code-block::
 
-  /encryptChunk?token=<base58-string>&index=<chunk-index>
-  /encryptChunkOnServer?token=<base58-string>&index=<chunk-index>
+  /eg_encryptChunk?token=<base58-string>&index=<chunk-index>
+  /eg_encryptChunkOnServer?token=<base58-string>&index=<chunk-index>
 
 A file is looked as a list of 256KB chunks.  It must be encrypted chunk by chunk.
 
@@ -122,7 +122,7 @@ The RPC endpiont's URL is like below:
 
 .. code-block::
 
-  /getDecryptTaskToken
+  /eg_getDecryptTaskToken
 
 The body of the request is a json string with the follow schema:
 
@@ -218,8 +218,8 @@ The RPC endpiont's URL is like below:
 
 .. code-block::
 
-   /decryptChunk?token=<base58-string>&index=<unique-integer>
-   /getDecryptedFile?token=<base58-string>&path=<file-path-on-ipfs>&size=<integer>
+   /eg_decryptChunk?token=<base58-string>&index=<unique-integer>
+   /eg_getDecryptedFile?token=<base58-string>&path=<file-path-on-ipfs>&size=<integer>
 
 The `decryptChunk` endpoint decrypts the byte string given in the POST body and returns the decrypted plaintext. The `getDecryptedFile` endpoint decrypts a file on decentralized storage, and it supports resuming breakpoints during downloading, using the `Content-Range` Header.
 
@@ -265,15 +265,15 @@ First, you get a random hex string through the following RPC endpoint.
 
 .. code-block::
 
-  /eh_getNonce
+  /eg_getNonce
 
 Then, you sign this hex string using `personal_sign` and use the signature to call the following RPC endpoint:
 
 .. code-block::
 
-  /eh_getSessionID?sig=<hex-encoded-signature>&nonce=<hex-encoded-nonce>
+  /eg_getSessionID?sig=<hex-encoded-signature>&nonce=<hex-encoded-nonce>
 
-The `nonce` parameter used to call `eh_getSessionID` must the returned value of `eh_getNonce`.
+The `nonce` parameter used to call `eg_getSessionID` must the returned value of `eg_getNonce`.
 
 A session ID is returned to you, which can be used in later requests.
 
@@ -283,7 +283,7 @@ You can ask the coordinator to assign a nearby recryptor to you, for an encrypti
 
 .. code-block::
 
-   /eh_getRecryptor?session=<session-id>
+   /eg_getRecryptor?session=<session-id>
 
 The domain name of the assigned recryptor will be returned.
 
@@ -293,7 +293,7 @@ You can get a non-encrypted file from decentralized storage (such as IPFS):
 
 .. code-block::
 
-   /eh_getFile?path=<path-of-the-file>&session=<session-id>
+   /eg_getFile?path=<path-of-the-file>&session=<session-id>
 
 The format of `path` depends on the decentralized storage solution. For IPFS, the path is a CID followed by the file's path in the Elfin directory.
 
@@ -306,7 +306,7 @@ You can request the coordinator to upload an immutable directory onto IPFS by po
 
 .. code-block::
 
-   /eh_upload?session=<session-id>&recryptor=<domain-name-of-recryptor>
+   /eg_upload?session=<session-id>&recryptor=<domain-name-of-recryptor>
 
 The format of the FormData is introduced in the :ref:`elfindirectory:FormData for upload` section.
 
@@ -323,6 +323,6 @@ Note that it needs to input chain name
 
 .. code-block::
 
-    /eh_getProxy?session=<session-id>&chain_name=<chain-name>
+    /eg_getProxy?session=<session-id>&chain_name=<chain-name>
 
 Usually, end users pay CDN providers for higher download speed. However, end users do not directly pay authorizers. Instead, CDN providers will pay the authorizers. To better serve its customers, a CDN provider can build a proxy to forward customers' requests (`/tx`, `/log` and `/calldata`) to Elfin authorizers.

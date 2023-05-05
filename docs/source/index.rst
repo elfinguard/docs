@@ -7,7 +7,7 @@ No access control, no ownership. In the Web3.0 era, ElfinGuard's Access-Control 
 
 .. note::
 
-   The ElfinGuard protocols are still under active development. The documention here is not stale now.
+   The ElfinGuard protocols are still under active development. The documentation here is not stale now.
 
 Contents
 --------
