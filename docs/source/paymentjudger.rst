@@ -2,7 +2,7 @@
 BCH Payment Judger
 ===========================
 An online judger for BCH stochastic payments
--------------------------------------------
+---------------------------------------------
 
 PaymentJudger is a third-party enclave to support stochastic payment on Bitcoin Cash mainchain. It serves the inactive payees which cannot check on-chain status and broadcast transactions. Maybe the payee is a smart contract which cannot be active, or maybe it is a real person who cannot get online, such as an author who uses ElfinHost Access-Control protocol to publish videos.
 

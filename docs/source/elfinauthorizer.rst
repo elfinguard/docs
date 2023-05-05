@@ -26,7 +26,7 @@ Primitives provided by authorizers
 ==================================
 
 Endorse historical contract interaction
-------------------------------------
+----------------------------------------
 
 A historical transaction can be described by such a solidity struct:
 
@@ -215,11 +215,11 @@ An authorizer provides four RPC endpoints to support the mentioned primitives. A
 In recryptor mode, the recryptor calculates a secret with its private key and the authorizer's PubKey, and then uses this secret and the returned Salt to decrypt the returned Result to get VRF output.
 
 Endorse historical contract interaction
-------------------------------------
+-----------------------------------------
 
 The RPC endpiont's URL is like below:
 
-.. code-block::
+.. code-block:: bash
 
    /eg_tx?hash=<transaction-hash-id>
 
@@ -230,7 +230,7 @@ Endorse historical events
 
 The RPC endpiont's URL is like below:
 
-.. code-block::
+.. code-block:: bash
 
    /eg_log?contract=<contract-address>&block=<blockhash>&topic0=<hex-string>&topic1=<hex-string>&topic2=<hex-string>&topic3=<hex-string>
 
@@ -243,7 +243,7 @@ Endorse the outputs of eth_call
 
 The RPC endpiont's URL is like below:
 
-.. code-block::
+.. code-block:: bash
 
     /eg_call?contract=<contract-address>&data=<calldata>&from=<from-account-address>
 
@@ -254,7 +254,7 @@ Granting secrets to account owners
 
 The RPC endpiont's URL is like below:
 
-.. code-block::
+.. code-block:: bash
 
     /eg_grantcode?time=<unix-timestamp>&contract=<contract-address>&datalist=<calldatalist>&nth=<index-of-calldata>&sig=<from-account-signature>&recryptorpk=<pubkey-of-recyrptor>&out=<outdata>
 
@@ -268,7 +268,7 @@ The 20 bytes of `calldata[16:36]` will be overwritten by the authorizer's EVM ad
 
 The from-account's address can be recovered from the `sig` parameter. When the `sig` is omitted, the `from` account has zero address. The `sig` is generated using MetaMask's `personal_sign`. The signed text is:
 
-.. code-block::
+.. code-block:: bash
 
   To Authorizer: time=<unix-timestamp>, contract=<contract-evm-address>, data=<keccak256-of-datalist-with-0x-prefix>
 

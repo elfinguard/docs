@@ -71,11 +71,11 @@ One solution to this problem is to use on-chain Smart Contracts for dynamic acce
 Multi-Grant from Authorities
 ======================================
 
-When a re-cryptor requires `eth_call` for authorization, there’s a potential for ‘Witch Attacks’ to occur.  To query `eth_call,’ users need a blockchain node to provide RPC endpoints.  A node can be run by a user, but in most cases the user will rent a node from a Node-as-a-Service (NaaS) provider.
+When a re-cryptor requires `eth_call` for authorization, there’s a potential for ‘Witch Attacks’ to occur.  To query `eth_call`, users need a blockchain node to provide RPC endpoints.  A node can be run by a user, but in most cases the user will rent a node from a Node-as-a-Service (NaaS) provider.
 
 Although the re-cryptors' internal data and logic are safe under the protection of enclaves, the input data the re-cryptor receives through `eth_call` may be incorrect – this can be for various reasons.  A CDN provider may receive incorrect information from a NaaS provider due to incorrect configuration of the re-cryptor's DNS and TLS settings.  A node run by a CDN provider may also return incorrect information if it is hacked because of vulnerabilities.  Any CDN provider may have security problems; thus, trusting one single CDN provider is problematic for content authors.
 
-To address this issue, the solution is to separate the task of authorization out from the re-cryptors and use dedicated Authorizers to query `eth_call.`  These authorizers are run by several trustworthy authorities and have strong security measures and good reputations.
+To address this issue, the solution is to separate the task of authorization out from the re-cryptors and use dedicated Authorizers to query `eth_call`.  These authorizers are run by several trustworthy authorities and have strong security measures and good reputations.
 
 To further protect the symmetric key, we use a "multi-grant" scheme which is like that of "multi-signature." The content creator specifies an “N” number of authorities and a threshold number “M” (M < N).  Before uploading, the re-cryptor must encrypt the original file with all “N” grant codes.  In tandem, before the re-cryptor decrypts a file for a requestor, the requestor must collect at least “M” grant codes from the specified authorities.
 
@@ -84,7 +84,7 @@ All Authorizers run by the same authority have the same "grant root".  For each 
 (The encryption/decryption algorithm for "multi-grant" will be introduced in a separate article.)
 
 Multi-zone to mitigate risks of enclaves' vulnerabilities
-======================================
+===========================================================
 
 Enclaves are integral to a system's security, but it still may be compromised if the underlying hardware has vulnerabilities.  Despite there have been no real attacks reported on CPUs with hyperthreading disabled, the risk of security breaches still exists.
 

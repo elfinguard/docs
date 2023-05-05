@@ -1,8 +1,8 @@
 ===========================
 UTXO Adapter
 ===========================
-UTXO Chains' Adaptor to ElfinGuard Authorizer.
--------------------------------------------
+UTXO Chains' Adaptor to ElfinGuard Authorizer
+-----------------------------------------------
 
 UTXO-based blockchains, such as Bitcoin, Bitcoin Cash, Litecoin, Dogecoin, do not have a logging scheme like EVM. UTXO adaptor derives an EVM transaction containing one EVM log from a UTXO-based transaction, such that ElfinGuard's authorizers can know what happened on these chains.
 
